@@ -1,8 +1,31 @@
 import re
 import unittest
 
+#BEFORE WRITING CODE, DO PSEUOCODE FIRST!!!
+
+#WEDNESDAY sumNums COMPLETE ^-^'
+#THURSDAY countWord
+#FRIDAY-SUNDAY: listURLs
+
 def sumNums(fileName):
-    pass
+    #open fileName
+    """This function takes in a filename as input and returns a sum of
+
+    the counted integers in the file. 
+    """
+    f = open(fileName, "r")
+    txt = f.read()
+
+    #create an emp list of numbers, in the form of a str
+    list_sum = re.findall(r'\d+', txt)
+
+    #convert to int
+    list_s = [int(val) for val in list_sum]
+
+    #Don't forget to close file, otherwise, u get a weird message
+    f.close()
+    return(sum(list_s))
+
 
 def countWord(fileName, word):
     pass
